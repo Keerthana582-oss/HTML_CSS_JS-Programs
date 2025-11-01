@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Phone Number Validation </title>
+        <style>
+            body { font-size: 32px; text-align: center; margin-top: 50px; }
+            form { display: inline-block; text-align: left; }
+            label, input { display: block; margin-bottom: 10px; font-size: 24px; }
+            button { font-size: 24px; padding: 8px; border-radius: 8px; color:chartreuse; background-color:darkmagenta; }
+        </style>
+    </head>
+    <body>
+        <form>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+            <span id="phoneError" style="color:red"></span>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <script>
+
+            document.querySelector('form').addEventListener('submit', function(e) 
+            {
+                const phone = document.getElementById('phone').value;
+                const errorSpan = document.getElementById('phoneError');
+                const phonePattern = /^\d{10}$/;
+                let errorMsg = '';
+
+                if (!phonePattern.test(phone)) 
+                {
+                    errorMsg = 'Phone number must be exactly 10 digits and contain only numbers.';
+                }
+
+                if (errorMsg) 
+                {
+                    e.preventDefault();
+                    errorSpan.textContent = errorMsg;
+                } 
+                else 
+                {
+                    errorSpan.textContent = '';
+                    alert('Form submitted successfully!');
+                }
+            });
+        </script>
+    </body>
+</html>

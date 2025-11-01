@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grade Calculator</title>
+    <style>
+        body 
+        {
+            font-size: 40px;
+            font-family: Arial, sans-serif, italic;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input 
+        {
+            font-size: 20px;
+            margin: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            font-style : italic;
+            margin : solid;
+
+        }
+        button
+        {
+            font-size: 30px;
+            font-style: bold;
+            background-color:aqua;
+            border-radius: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Grade Calculator</h2>
+    <label>Name: <input type="text" id="name"></label><br>
+    <label>Marks (comma separated): <input type="text" id="marks"></label><br><br>
+    <button onclick="showResult()">Calculate Grade</button>
+    <p id="output"></p>
+
+    <script>
+        class Student 
+        {
+            constructor(name, marks) 
+            {
+                this.name = name;
+                this.marks = marks;
+            }
+
+            avgMarks() 
+            {
+                if (this.marks.length === 0) return 0;
+                let sum = this.marks.reduce((a, b) => a + b, 0);
+                return sum / this.marks.length;
+            }
+
+            grade() 
+            {
+                const avg = this.avgMarks();
+                if (avg >= 90) return "A";
+                else if (avg >= 75) return "B";
+                else if (avg >= 50) return "C";
+                else return "F";
+            }
+        }
+
+        function showResult() 
+        {
+            const name = document.getElementById('name').value;
+            const marksInput = document.getElementById('marks').value;
+            const marks = marksInput.split(',').map(Number).filter(n => !isNaN(n));
+            const student = new Student(name, marks);
+            const avg = student.avgMarks().toFixed(2);
+            const grade = student.grade();
+            document.getElementById('output').textContent =
+                `Student: ${student.name} | Average Marks: ${avg} | Grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>

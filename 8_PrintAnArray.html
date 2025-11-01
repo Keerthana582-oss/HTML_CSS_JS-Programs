@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Print Array Elements</title>
+  <style>
+    h2
+    {
+        font-size: 50px;
+        padding-left: 250px;
+        color: darkblue;
+        font-family: Arial, sans-serif;
+    }
+    ul 
+    {
+        font-size: 30px;
+        color:orangered;
+        font-family:initial;
+        list-style-type: square;
+        padding-left: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Array Elements</h2>
+  <ul id="outputList"></ul>
+
+  <script>
+    // Create an array with 4 elements
+    const fruits = ["Apple", "Banana", "Cherry", "Mango"];
+
+    // Get the output container
+    const list = document.getElementById("outputList");
+
+    // Loop through the array and print each element
+    for (let i = 0; i < fruits.length; i++) 
+    {
+      const item = document.createElement("li");
+      item.textContent = fruits[i];
+      list.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>

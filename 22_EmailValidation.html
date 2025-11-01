@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name and Email Validation</title>
+    <style>
+        body { font-size: 30px; text-align: center; margin-top: 50px; color:blue; background-color:yellow; font-family: Arial, sans-serif; }
+        input { font-size: 25px; margin: 10px; padding: 8px; border-radius: 8px; color:darkgoldenrod; background-color:wheat; }
+        button { font-size: 25px; margin: 10px; padding: 8px; border-radius: 8px; background-color:aqua; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Textbox Validation: Name and Email Fields</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" autocomplete="off"><br><br>
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" autocomplete="off"><br><br>
+        <button type="submit">Submit</button>
+        <div id="error" class="error"></div>
+    </form>
+    <script>
+        function validateForm() 
+        {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const errorDiv = document.getElementById('error');
+
+            // Name validation
+            if (name === "") 
+            {
+                errorDiv.textContent = "Name cannot be empty.";
+                return false;
+            }
+            if (!/^[A-Za-z\s]+$/.test(name)) 
+            {
+                errorDiv.textContent = "Name must contain only letters and spaces.";
+                return false;
+            }
+
+            // Email validation
+            if (email === "") 
+            {
+                errorDiv.textContent = "Email cannot be empty.";
+                return false;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                errorDiv.textContent = "Email must contain '@' and '.'.";
+                return false;
+            }
+            // Simple email regex for format validation
+            const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (!emailPattern.test(email)) 
+            {
+                errorDiv.textContent = "Please enter a valid email address.";
+                return false;
+            }
+
+            errorDiv.textContent = "";
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>

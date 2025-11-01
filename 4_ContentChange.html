@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Paragraph Text</title>
+  <style>
+  p 
+  {
+    text-align:center;
+    font-size:50px;
+    font-weight: bold;
+    color: darkred;
+  }
+  button
+  {
+    font-size: 30px;
+    background-color: lightgreen;
+    border-radius: 12px;
+    margin-left: 600px;
+  }
+  </style>
+</head>
+<body>
+
+  <p id="myParagraph">I Keerthana studying btech in IT stream at NIT Srinagar.</p>
+  <br>
+  <button id= "btn" onclick="changeText()"; >Click Me!</button>
+
+  <script>
+    
+    function changeText() 
+    {
+      document.getElementById("myParagraph").innerHTML = "I am Keerthana student of NIT srinagar!";
+      document.getElementById("myParagraph").style.color = "blue";
+      document.getElementById("myParagraph").style.fontStyle = "italic"
+      document.getElementById("myParagraph").style.fontSize = "60px";
+      document.getElementById("myParagraph").style.paddingTop = "120px";
+      document.getElementById("myParagraph").style.fontWeight = "bold";
+      document.getElementById("btn").remove();
+    }
+    
+  </script>
+
+</body>
+</html>

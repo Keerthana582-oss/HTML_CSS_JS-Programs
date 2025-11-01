@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Switcher</title>
+  <style>
+    img 
+    {
+      width: 700px;
+      height: 500px;
+      padding-left: 200px;
+      border: 3px ;
+    }
+    button 
+    {
+      margin-top: 20px;
+      margin-left: 470px;
+      font-size: 30px;
+      background-color: lime;
+      border-radius: 12px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2><i>Click the button to change the image</i></h2>
+  <img id="myimage" src="html logo.png" alt="logo1">
+  <br>
+  <button id="btn" onclick="changeImage()">Change Image</button>
+
+  <script>
+
+    function changeImage() 
+    {
+      document.getElementById("myimage").src = "js logo.png";
+      document.getElementById("myimage").paddingleft = "50px";
+      document.getElementById("btn").remove();
+
+    }
+  </script>
+</body>
+</html>

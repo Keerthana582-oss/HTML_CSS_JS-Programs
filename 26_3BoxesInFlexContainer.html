@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Main Content Boxes</title>
+  <style>
+    .main-content 
+    {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      height: 300px;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    .box 
+    {
+      background: #cce5ff;
+      border: 1px solid #99c2ff;
+      padding: 20px;
+      font-size: 1.1rem;
+      min-width: 100px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .grow-box 
+    {
+      flex-grow: 1; /* This box will grow to occupy extra space */
+    }
+    .shrink-box 
+    {
+      flex-shrink: 1; /* This box will shrink if needed */
+      width: 200px;
+    }
+    .align-self-box 
+    {
+      align-self: flex-end; /* This box is aligned differently */
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <article class="box grow-box">Grows to fill space</article>
+    <article class="box shrink-box">Shrinks on small screens</article>
+    <article class="box align-self-box">Aligned to bottom</article>
+  </div>
+</body>
+</html>

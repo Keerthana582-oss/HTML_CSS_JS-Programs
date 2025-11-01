@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Style Change</title>
+  <style>
+    P
+    {
+      font-family:normal;
+      font-size: 45px;
+      font-weight: normal;
+      color: black;
+    }
+    button 
+    {
+      margin-top: 20px;
+      margin-left: 30px;
+      font-size: 40px;
+      background-color:darkkhaki;
+      border-radius: 15px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click the button to change paragraph style</h2>
+  <p id="myPara"> Bathukamma festival program conducting by all telugu people </p>
+  <button id="btn" onclick="changeStyle()">Change Style</button>
+
+  <script>
+    function changeStyle() 
+    {
+      const para = document.getElementById("myPara");
+      para.style.fontFamily = "italic, cursive, sans-serif";
+      para.style.fontSize = "50px";
+      para.style.fontWeight = "bold";
+      para.style.color = "purple";
+      document.getElementById("btn").remove();
+    }
+  </script>
+
+</body>
+</html>

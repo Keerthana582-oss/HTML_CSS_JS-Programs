@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Two Numbers</title>
+</head>
+<body>
+    <h1>Addition of Two Numbers</h1>
+    <p>Enter the first number: <input type="number" id="num1"></p>
+    <p>Enter the second number: <input type="number" id="num2"></p>
+    <button onclick="addNumbers()">Add</button>
+    <p>Sum: <span id="result"></span></p>
+
+    <script>
+        function addNumbers() 
+        {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) 
+            {
+                document.getElementById("result").textContent = "Please enter valid numbers.";
+            } 
+            else 
+            {
+                const sum = num1 + num2;
+                document.getElementById("result").textContent = sum;
+            }
+        }
+    </script>
+</body>
+</html>

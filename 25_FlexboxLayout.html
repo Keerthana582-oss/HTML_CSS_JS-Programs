@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Menu Layout</title>
+  <style>
+    .menu-container {
+      display: flex;
+      flex-direction: row;           /* Place items horizontally */
+      justify-content: center;       /* Center items horizontally */
+      align-items: center;           /* Align items vertically */
+      height: 80px;                  /* For vertical alignment demonstration */
+      background-color: aqua;
+      gap: 40px;                     /* Space between menu items */
+    }
+    .menu-item {
+      font-size: 1.2rem;
+      color: #333;
+      text-decoration:blue;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s;
+      background-color: chartreuse;
+    }
+    .menu-item:hover 
+    {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu-container">
+    <a href="#" class="menu-item">Home</a>
+    <a href="#" class="menu-item">About</a>
+    <a href="#" class="menu-item">Services</a>
+    <a href="#" class="menu-item">Contact</a>
+  </nav>
+</body>
+</html>

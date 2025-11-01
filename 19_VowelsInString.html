@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Vowels in String</title>
+    <style>
+        body { font-size: 32px; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <h2>Count Vowels in "JAVASCRIPT"</h2>
+    <p id="result"></p>
+    <script>
+        const str = "JAVASCRIPT";
+        const vowels = str.match(/[AEIOU]/gi);
+        const count = vowels ? vowels.length : 0;
+        document.getElementById('result').textContent = 
+            `Number of vowels in "${str}": ${count}`;
+    </script>
+</body>
+</html>

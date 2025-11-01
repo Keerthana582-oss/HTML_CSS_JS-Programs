@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Case Conversion</title>
+    <style>
+        body { font-size: 32px; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <h2>String Case Conversion</h2>
+    <p id="upper"></p>
+    <p id="lower"></p>
+    <script>
+        const str1 = "hello world";
+        const str2 = "JAVASCRIPT";
+        document.getElementById('upper').textContent = `"${str1}" in uppercase: ${str1.toUpperCase()}`;
+        document.getElementById('lower').textContent = `"${str2}" in lowercase: ${str2.toLowerCase()}`;
+    </script>
+</body>
+</html>

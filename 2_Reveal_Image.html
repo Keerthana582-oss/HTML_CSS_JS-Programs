@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hide and Reveal the Image</title>
+  <style>
+    img 
+    {
+      width: 450px;
+      height:600px;
+      padding-left: 200px;
+    }
+    button 
+    {
+      margin-top: 20px;
+      margin-left: 100px;
+      font-size: 30px;
+      background-color: lightgreen;
+      border-radius: 12px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click the button to hide the image</h2>
+  <img id="myImage" src="https://i.pinimg.com/736x/be/0e/62/be0e624fafc3fc76e113d4f53cc25eb0.jpg" alt="peackock">
+  <br>
+  <button id="btn1" onclick="hideImage()">Hide Image</button>
+  <button id="btn2" onclick="revealImage()">Reveal Image</button>
+
+  <script>
+    function hideImage() 
+    {
+      document.getElementById("myImage").style.display = "none";
+      document.getElementById("btn1").remove();
+    }
+    function revealImage() 
+    {
+      document.getElementById("myImage").style.display = "block";
+      document.getElementById("btn2").remove();
+    }
+
+  </script>
+
+</body>
+</html>

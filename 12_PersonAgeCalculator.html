@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Age Calculator</title>
+    <style>
+        body
+        {
+            font-size: 40px;
+            font-style: italic;
+            background-color:yellow;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Person Age Calculator</h1>
+    <p id="personInfo"></p>
+    
+
+    <script>
+        class Person 
+        {
+            constructor(name, birthYear) 
+            {
+                this.name = name;
+                this.birthYear = birthYear;
+            }
+
+            age() 
+            {
+                const currentYear = new Date().getFullYear();
+                return currentYear - this.birthYear;
+            }
+        }
+
+        // Create a new Person instance
+        const person1 = new Person("Keerthana", 2007);
+
+        // Get the element to display the information
+        const personInfo = document.getElementById("personInfo");
+
+        // Display the person's name and age
+        personInfo.innerHTML = `
+            <p>Name: ${person1.name} </p>
+            <p>Birth Year: ${person1.birthYear} </p>
+            <p>Age: ${person1.age()}</p>
+        `;
+
+        // You can create more instances and display their ages as well
+        const person2 = new Person("Kumari", 1985);
+        const person3 = new Person("Anu", 2005);
+
+        personInfo.innerHTML += `
+            <p>Name: ${person2.name}, Age: ${person2.age()}</p>
+            <p>Name: ${person3.name}, Age: ${person3.age()}</p>
+        `;
+
+    </script>
+
+</body>
+</html>

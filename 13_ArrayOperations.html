@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations</title>
+    <style>
+        body { font-size: 30px; color: blue; background-color:bisque; font-family: Arial, sans-serif; margin: 30px; }
+        .section { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2>Fruits Array</h2>
+        <p id="fruits"></p>
+        <p id="updatedFruits"></p>
+    </div>
+    <div class="section">
+        <h2>Sorted Numbers</h2>
+        <p id="sortedNumbers"></p>
+    </div>
+    <script>
+        // Create an array of 5 fruits
+        let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+        let fruitsHtml = "<b>Original Fruits:</b><br>";
+        for (let i = 0; i < fruits.length; i++) 
+        {
+            fruitsHtml += fruits[i] +"<br>";
+        }
+        document.getElementById("fruits").innerHTML = fruitsHtml;
+
+        // Add a new fruit to the end and remove the first fruit
+        fruits.push("Pineapple");
+        fruits.shift();
+        let updatedHtml = "<strong>Updated Fruits:</strong><br>";
+        for (let fruit of fruits) 
+        {
+            updatedHtml += fruit + "<br>";
+        }
+        document.getElementById("updatedFruits").innerHTML = updatedHtml;
+
+        // Sort an array of numbers in ascending order
+        let numbers = [42, 7, 19, 3, 25, 15];
+        numbers.sort(function(a, b) { return a - b; });
+        document.getElementById("sortedNumbers").innerHTML =
+            "<strong>Sorted Numbers:</strong> " + numbers.join(", ");
+    </script>
+</body>
+</html>

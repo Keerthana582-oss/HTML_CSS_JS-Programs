@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String to Number Addition</title>
+    <style>
+        body { font-size: 35px; padding-top:70px; text-align: center;font-style: italic; margin-top: 50px; background-color:cyan; color:crimson}
+    </style>
+</head>
+<body>
+    <h2>Convert String to Number and Add 10</h2>
+    <p id="result"></p>
+    <script>
+        const str = "123.45";
+        const num = parseFloat(str);
+        const sum = num + 10;
+        document.getElementById('result').textContent = `"${str}" + 10 = ${sum}`;
+    </script>
+</body>
+</html>
